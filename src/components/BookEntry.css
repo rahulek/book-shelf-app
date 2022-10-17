@@ -1,0 +1,46 @@
+.book-entry {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #ae9f9f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+ .book-entry__title_author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-entry__title_author p {
+    color: white;
+}
+
+.book-entry__tags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-entry__tags p {
+    font-style: bold;
+    font-size: 0.6rem;
+    background-color: goldenrod;
+    border-radius: 20px;
+    margin: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgb(214, 207, 207)
+}
+
+.book-entry__price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(243, 237, 237);
+    background-color: #077777;
+    border: 1px solid rgb(216, 208, 208);
+    padding: 0.5rem;
+    border-radius: 12px;
+  }

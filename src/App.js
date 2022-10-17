@@ -7,7 +7,7 @@ import BookEntry from "./components/BookEntry";
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to the world of Books</h1>
+      <h1>Welcome to the World of Books</h1>
       {/* Use a new component */}
       <BookEntry />
     </div>

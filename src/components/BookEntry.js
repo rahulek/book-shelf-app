@@ -1,8 +1,21 @@
+import "./BookEntry.css";
+
 //A React component that handles one book
-//Currently, it returns a very simple JSX.
 
 function BookEntry() {
-  return <h2>Book Entry</h2>;
+  return (
+    <div className="book-entry">
+      <div>October 18, 2022</div>
+      <div className="book-entry__title_author">
+        <p>The Story of Civilization</p>
+      </div>
+      <div className="book-entry__tags">
+        <p>History</p>
+        <p>Multi-Volume</p>
+      </div>
+      <div className="book-entry__price">₹1234</div>
+    </div>
+  );
 }
 
 export default BookEntry;
