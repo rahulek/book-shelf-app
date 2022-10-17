@@ -9,7 +9,12 @@ function App() {
     <div className="App">
       <h1>Welcome to the World of Books</h1>
       {/* Use a new component */}
-      <BookEntry />
+      <BookEntry
+        date={new Date()}
+        title={"The Story of Civilization"}
+        tags={["History", "Multi-Volume"]}
+        price={1234}
+      />
     </div>
   );
 }
