@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p {
+  font-size: 2em;
+}
