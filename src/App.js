@@ -1,12 +1,15 @@
 import "./App.css";
 
+//Import a new component
+import "./components/BookEntry";
+import BookEntry from "./components/BookEntry";
+
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to the world of ReactJS</h1>
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
+      <h1>Welcome to the world of Books</h1>
+      {/* Use a new component */}
+      <BookEntry />
     </div>
   );
 }
