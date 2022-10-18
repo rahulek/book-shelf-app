@@ -1,5 +1,5 @@
 .book-entry {
-    width: 70%;
+    width: 65%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -17,10 +17,16 @@
     align-items: center;
 }
 
-.book-entry__title_author p {
+.title {
+    font-family: 'Open Sans';
     text-align: center;
     color: white;
-    
+}
+
+.author {
+    font-family: 'Open Sans';
+    text-align: center;
+    color: rgb(42, 34, 34);
 }
 
 .book-entry__tags {

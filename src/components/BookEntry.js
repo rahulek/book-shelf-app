@@ -13,6 +13,7 @@ function BookEntry(props) {
 
   //Process props.title, tags and price data
   const title = props.title;
+  const author = props.author;
   const tags = props.tags;
   const price = props.price;
 
@@ -25,7 +26,10 @@ function BookEntry(props) {
         <div>{day}</div>
       </div>
       <div className="book-entry__title_author">
-        <p>{title}</p>
+        <div className="title">{title}</div>
+        <div className="author">
+          <em>by {author}</em>
+        </div>
       </div>
       {tags.length === 2 && (
         <div className="book-entry__tags">
