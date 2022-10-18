@@ -1,0 +1,28 @@
+.book-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgb(66, 66, 172);
+    border-bottom: 1px solid rgb(125, 119, 119);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1rem 0;
+}
+
+.book-date__year {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color:rgb(232, 232, 235)
+}
+
+.book-date__month {
+    font-size: 0.8rem;
+    font-style: italic;
+    color:rgb(232, 232, 235)
+}
+
+.book-date__day {
+    color:rgb(216, 216, 225)
+}
