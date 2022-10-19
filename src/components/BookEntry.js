@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./BookEntry.css";
 import "./BookDate";
 import BookDate from "./BookDate";
@@ -8,9 +9,9 @@ function BookEntry(props) {
   //that this component should consume and
   //render
 
-  //Changed title from "const" to "let"
-  //so that it can be modified inside the editClickHandler
-  let title = props.title;
+  //Create a new piece of state with useState()
+  //for changing and render the title
+  let [title, setTitle] = useState(props.title);
 
   const author = props.author;
   const tags = props.tags;
@@ -19,10 +20,14 @@ function BookEntry(props) {
   //Add an event handler for the "Edit" button clicks
   const editClickHandler = (e) => {
     //When the button is clicked, we want to change the title of the
-    //book to "This title was updated".
+    //book to "New Title".
+    //
+    //We must use setTitle() state management ReactJS function
+    //This will not only change the state and set the title to the
+    //new value but will also render the JSX again. This will, in turn,
+    //render the updated title on the screen.
 
-    title = "New Title";
-    console.log(title);
+    setTitle("New Title");
   };
 
   //Return the JSX that uses the data that's passed-in
