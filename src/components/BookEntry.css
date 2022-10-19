@@ -1,5 +1,5 @@
 .book-entry {
-    width: 65%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -53,4 +53,12 @@
     border: 1px solid rgb(216, 208, 208);
     padding: 0.5rem;
     border-radius: 12px;
-  }
+}
+
+.book-entry__edit button {
+    width: 4rem;
+    color:rgb(75, 3, 3);
+    background-color: palegoldenrod;
+    border: 1px solid rgb(216, 208, 208);
+    border-radius: 10px;
+}

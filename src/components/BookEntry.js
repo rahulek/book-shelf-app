@@ -14,6 +14,12 @@ function BookEntry(props) {
   const tags = props.tags;
   const price = props.price;
 
+  //Add an event handler for the "Edit" button clicks
+  const editClickHandler = (e) => {
+    //Dump the event data.
+    console.log("Edit clicked: ", e);
+  };
+
   //Return the JSX that uses the data that's passed-in
   return (
     <div className="book-entry">
@@ -31,6 +37,10 @@ function BookEntry(props) {
         </div>
       )}
       <div className="book-entry__price">₹{price}</div>
+      <div className="book-entry__edit">
+        {/* Register a onClick handler */}
+        <button onClick={editClickHandler}>Edit</button>
+      </div>
     </div>
   );
 }
