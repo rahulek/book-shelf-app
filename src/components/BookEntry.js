@@ -11,33 +11,6 @@ function BookEntry(props) {
   const author = props.author;
   const tags = props.tags;
 
-  //Add an event handler for the "Edit Title" button clicks
-  const editTitleClickHandler = () => {
-    //Instead of setting the new state directly,
-    //call the state modify method with a function.
-    //
-    //This function gets called asynchronously with
-    //the old state as a a parameter
-    //
-    //The function should return the new state.
-    setTitle((oldState) => "New Title");
-  };
-
-  //Add an event handler for the "Edit Price" button clicks
-  const editPriceClickHandler = () => {
-    //Instead of setting the new state directly,
-    //call the state modify method with a function.
-    //
-    //This function gets called asynchronously with
-    //the old state as a a parameter
-    //
-    //The function should return the new state.
-    setPrice((oldPrice) => {
-      const newPrice = Math.floor(Math.random() * (1000 - 100) + 100);
-      return newPrice;
-    });
-  };
-
   //Return the JSX that uses the data that's passed-in
   return (
     <div className="book-entry">
@@ -56,9 +29,8 @@ function BookEntry(props) {
       )}
       <div className="book-entry__price">₹{price}</div>
       <div className="book-entry__edit">
-        {/* Register a onClick handler */}
-        <button onClick={editTitleClickHandler}>Edit Title</button>
-        <button onClick={editPriceClickHandler}>Edit Price</button>
+        <button>Edit Details</button>
+        <button>Delete</button>
       </div>
     </div>
   );

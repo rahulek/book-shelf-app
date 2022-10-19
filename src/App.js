@@ -1,36 +1,14 @@
 import "./App.css";
 import "./components/Books";
 import Books from "./components/Books";
+import booksData from "./data/BooksData";
 
 function App() {
-  const books = [
-    {
-      date: new Date("January 1, 2019"),
-      title: "The Colleced Works of William Shakespeare",
-      author: "Oxford University Press",
-      tags: ["drama", "medieval"],
-      price: 872,
-    },
-    {
-      date: new Date("October 12, 2020"),
-      title: "Saladin",
-      author: "John Man",
-      tags: ["history", "biography"],
-      price: 342,
-    },
-    {
-      date: new Date("December 27, 2016"),
-      title: "Republic",
-      author: "Plato and Oxford University Press",
-      tags: ["plato", "philosophy"],
-      price: 699,
-    },
-  ];
-
   return (
     <div className="App">
-      <h2>Welcome to the World of Books</h2>
-      <Books books={books} />
+      <h1>Welcome to the World of Books</h1>
+      <button>Click Here to add a New Book to your Shelf</button>
+      <Books books={booksData} />
     </div>
   );
 }

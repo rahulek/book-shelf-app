@@ -56,6 +56,13 @@
     border-radius: 12px;
 }
 
+.book-entry__edit {
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 .book-entry__edit button {
     width: 4rem;
     font-size: 0.6rem;

@@ -4,3 +4,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.App button {
+    color: rgb(145, 48, 12);
+    background-color: burlywood;
+    font-size: 1rem;
+}
