@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./BookForm.css";
 
 const BookForm = (props) => {
@@ -6,6 +7,10 @@ const BookForm = (props) => {
   let [author, setAuthor] = useState(props.author ? props.author : "");
   let [tags, setTags] = useState(props.tags ? props.tags : "");
   let [price, setPrice] = useState(props.price ? props.price : 100);
+
+  //see if we're adding/editing
+  let location = useLocation();
+  let isEditing = location && location.pathname === "/editbook";
 
   //Input Change Handlers
   const titleChangeHandler = (e) => {
@@ -25,7 +30,9 @@ const BookForm = (props) => {
   };
 
   //Form submit handlers
-  const formSubmitHandler = () => {
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+
     console.log("Form submitted.");
     console.log(`${title}, ${author}, ${tags}, ${price}`);
   };
@@ -78,7 +85,7 @@ const BookForm = (props) => {
             onChange={priceChangeHandler}
           />
         </div>
-        <button type="submit">Add this Book!</button>
+        <button type="submit">{isEditing ? "Save Book" : "Add Book"}</button>
       </form>
     </div>
   );
