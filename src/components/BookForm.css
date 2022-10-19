@@ -1,0 +1,31 @@
+.form_wrapper {
+    width: 60%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(177, 225, 225);
+    border: 1px solid gray;
+}
+
+.form_wrapper div {
+    margin: 10px;
+}
+
+.form_wrapper label {
+   display: inline-block;
+   width: 80px;
+   text-align: right;
+   padding: 10px;
+}
+
+.form_wrapper input {
+    width: 200px;
+}
+
+.form_wrapper button {
+    margin-left: 100px;
+    color: rgb(21, 25, 28);
+    background-color: rgb(112, 184, 221);
+}
