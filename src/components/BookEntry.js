@@ -4,49 +4,51 @@ import "./BookDate";
 import BookDate from "./BookDate";
 
 function BookEntry(props) {
-  //Take in props
-  //props is an object that holds the data
-  //that this component should consume and
-  //render
-
-  //Create a new piece of state with useState()
-  //for changing and render the title
-  let [title, setTitle] = useState(props.title);
-
+  //State as an object
+  //State now stores title and price together
+  //
+  //Start with an initial state of the "props"
+  let [titlePrice, setTitlePrice] = useState({
+    title: props.title,
+    price: props.price,
+  });
   const author = props.author;
   const tags = props.tags;
 
-  //Challenge Solution: Create a new piece of state for price
-  let [price, setPrice] = useState(props.price);
-
-  //Add an event handler for the "Edit" button clicks
-  const editClickHandler = (e) => {
-    //When the button is clicked, we want to change the title of the
-    //book to "New Title".
+  //Add an event handler for the "Edit Title" button clicks
+  const editTitleClickHandler = () => {
+    //Change only the Title
     //
-    //We must use setTitle() state management ReactJS function
-    //This will not only change the state and set the title to the
-    //new value but will also render the JSX again. This will, in turn,
-    //render the updated title on the screen.
-
-    setTitle("New Title");
+    //use the ES6 spead syntax to get title and price
+    //and then change the title to the new one.
+    setTitlePrice({
+      ...titlePrice,
+      title: "New Title",
+    });
   };
 
-  //Challenge Solution:
-  const editClickHandlerForPrice = () => {
-    //calculate a new random number between 100 and 100
-    //and set that as a new price
-    const newPrice = Math.floor(Math.random() * (1000 - 100) + 100);
-
-    setPrice(newPrice);
+  //Add an event handler for the "Edit Price" button clicks
+  const editPriceClickHandler = () => {
+    //Change only the price
+    //
+    //use the ES6 spead syntax to get title and price
+    //and then change the price to a new random number between 100 & 1000.
+    setTitlePrice({
+      ...titlePrice,
+      price: Math.floor(Math.random() * (1000 - 100) + 100),
+    });
   };
 
   //Return the JSX that uses the data that's passed-in
+  //
+  //Use the Object state now.
+  //price as priceTitle.price
+  //title as priceTitle.title
   return (
     <div className="book-entry">
       <BookDate date={props.date} />
       <div className="book-entry__title_author">
-        <div className="title">{title}</div>
+        <div className="title">{titlePrice.title}</div>
         <div className="author">
           <em>by {author}</em>
         </div>
@@ -57,10 +59,11 @@ function BookEntry(props) {
           <p>{tags[1]}</p>
         </div>
       )}
-      <div className="book-entry__price">₹{price}</div>
+      <div className="book-entry__price">₹{titlePrice.price}</div>
       <div className="book-entry__edit">
         {/* Register a onClick handler */}
-        <button onClick={editClickHandlerForPrice}>Edit</button>
+        <button onClick={editTitleClickHandler}>Edit Title</button>
+        <button onClick={editPriceClickHandler}>Edit Price</button>
       </div>
     </div>
   );
