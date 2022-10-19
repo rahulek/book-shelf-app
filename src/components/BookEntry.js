@@ -15,7 +15,9 @@ function BookEntry(props) {
 
   const author = props.author;
   const tags = props.tags;
-  const price = props.price;
+
+  //Challenge Solution: Create a new piece of state for price
+  let [price, setPrice] = useState(props.price);
 
   //Add an event handler for the "Edit" button clicks
   const editClickHandler = (e) => {
@@ -28,6 +30,15 @@ function BookEntry(props) {
     //render the updated title on the screen.
 
     setTitle("New Title");
+  };
+
+  //Challenge Solution:
+  const editClickHandlerForPrice = () => {
+    //calculate a new random number between 100 and 100
+    //and set that as a new price
+    const newPrice = Math.floor(Math.random() * (1000 - 100) + 100);
+
+    setPrice(newPrice);
   };
 
   //Return the JSX that uses the data that's passed-in
@@ -49,7 +60,7 @@ function BookEntry(props) {
       <div className="book-entry__price">₹{price}</div>
       <div className="book-entry__edit">
         {/* Register a onClick handler */}
-        <button onClick={editClickHandler}>Edit</button>
+        <button onClick={editClickHandlerForPrice}>Edit</button>
       </div>
     </div>
   );
