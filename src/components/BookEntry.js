@@ -8,16 +8,21 @@ function BookEntry(props) {
   //that this component should consume and
   //render
 
-  //Process props.title, tags and price data
-  const title = props.title;
+  //Changed title from "const" to "let"
+  //so that it can be modified inside the editClickHandler
+  let title = props.title;
+
   const author = props.author;
   const tags = props.tags;
   const price = props.price;
 
   //Add an event handler for the "Edit" button clicks
   const editClickHandler = (e) => {
-    //Dump the event data.
-    console.log("Edit clicked: ", e);
+    //When the button is clicked, we want to change the title of the
+    //book to "This title was updated".
+
+    title = "New Title";
+    console.log(title);
   };
 
   //Return the JSX that uses the data that's passed-in
