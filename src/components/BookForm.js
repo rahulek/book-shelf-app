@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./BookForm.css";
 
@@ -14,27 +14,39 @@ const BookForm = (props) => {
 
   //Input Change Handlers
   const titleChangeHandler = (e) => {
-    console.log("Title Input changed");
+    //Modify the title state to reflect the user entered keystroke
+    setTitle(e.target.value);
   };
 
   const authorChangeHandler = (e) => {
-    console.log("Author Input changed");
+    //Modify the author state to reflect the user entered keystroke
+    setAuthor(e.target.value);
   };
 
   const tagsChangeHandler = (e) => {
-    console.log("Tags Input changed");
+    //Modify the tags state to reflect the user entered keystroke
+    setTags(e.target.value);
   };
 
   const priceChangeHandler = (e) => {
-    console.log("Price Input changed");
+    //Modify the tags state to reflect the user entered keystroke
+    setPrice(parseInt(e.target.value));
   };
 
   //Form submit handlers
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    console.log("Form submitted.");
-    console.log(`${title}, ${author}, ${tags}, ${price}`);
+    //Collect all the information into an object
+    const bookData = {
+      id: Math.floor(Math.random() * (100 - 1) + 1),
+      date: new Date(Date.now()), //now
+      title,
+      author,
+      tags,
+      price,
+    };
+    console.log(bookData);
   };
 
   return (
