@@ -10,22 +10,22 @@ const BookForm = (props) => {
 
   //Input Change Handlers
   const titleChangeHandler = (e) => {
-    console.log(`Title being changed`);
+    setTitle(e.target.value);
   };
 
   const authorChangeHandler = (e) => {
     //Modify the author state to reflect the user entered keystroke
-    console.log(`Author being changed`);
+    setAuthor(e.target.value);
   };
 
   const tagsChangeHandler = (e) => {
     //Modify the tags state to reflect the user entered keystroke
-    console.log(`Tags being changed`);
+    setTags(e.target.value);
   };
 
   const priceChangeHandler = (e) => {
     //Modify the tags state to reflect the user entered keystroke
-    console.log(`Price being changed`);
+    setPrice(e.target.value);
   };
 
   //Form submit handlers
@@ -33,15 +33,26 @@ const BookForm = (props) => {
     e.preventDefault();
 
     //Collect all the information into an object
+    let parsedPrice = parseInt(price);
+    if (isNaN(parsedPrice)) {
+      parsedPrice = 0;
+    }
+
     const bookData = {
       id: uuid(),
       date: new Date(Date.now()), //now
       title,
       author,
       tags: tags.split(","),
-      price,
+      price: parsedPrice,
     };
-    console.log(`BookData: ${bookData}`);
+    console.log(`BookData: ${JSON.stringify(bookData)}`);
+
+    //Clear the input fields
+    setTitle("");
+    setAuthor("");
+    setTags("");
+    setPrice("");
   };
 
   return (
