@@ -7,7 +7,7 @@ const Books = (props) => {
 
   return books.map((book) => (
     <BookEntry
-      key={book.title}
+      key={book.id}
       date={book.date}
       title={book.title}
       author={book.author}

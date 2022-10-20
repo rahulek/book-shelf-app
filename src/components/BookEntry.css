@@ -56,6 +56,11 @@
     border-radius: 12px;
 }
 
+.book-entry__edit {
+    display: flex;
+    flex-direction: column;
+}
+
 .book-entry__edit button {
     width: 4rem;
     font-size: 0.6rem;
@@ -63,4 +68,9 @@
     background-color: palegoldenrod;
     border: 1px solid rgb(216, 208, 208);
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.book-entry__edit button:hover {
+    background-color:bisque
 }

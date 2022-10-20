@@ -1,3 +1,6 @@
+import React from "react";
+import uuid from "react-uuid";
+
 import "./App.css";
 import "./components/Books";
 import Books from "./components/Books";
@@ -5,6 +8,7 @@ import Books from "./components/Books";
 function App() {
   const books = [
     {
+      id: uuid(),
       date: new Date("January 1, 2019"),
       title: "The Colleced Works of William Shakespeare",
       author: "Oxford University Press",
@@ -12,6 +16,7 @@ function App() {
       price: 872,
     },
     {
+      id: uuid(),
       date: new Date("October 12, 2020"),
       title: "Saladin",
       author: "John Man",
@@ -19,6 +24,7 @@ function App() {
       price: 342,
     },
     {
+      id: uuid(),
       date: new Date("December 27, 2016"),
       title: "Republic",
       author: "Plato and Oxford University Press",
@@ -29,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Welcome to the World of Books</h2>
+      <h1>Welcome to the World of Books</h1>
       <Books books={books} />
     </div>
   );
