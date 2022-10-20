@@ -39,14 +39,16 @@ const BookForm = (props) => {
 
     //Collect all the information into an object
     const bookData = {
-      id: Math.floor(Math.random() * (100 - 10) + 10),
+      id: Math.floor(Math.random() * (100000 - 10) + 10),
       date: new Date(Date.now()), //now
       title,
       author,
       tags,
       price,
     };
-    console.log(bookData);
+
+    //Invoke the parent's handler
+    props.onAddBook(bookData);
   };
 
   return (

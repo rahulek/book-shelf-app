@@ -3,11 +3,14 @@ import "./BookEntry";
 import BookEntry from "./BookEntry";
 
 const Books = (props) => {
+  //Get all the books
   const books = props.books;
 
+  //Create a BookEntry component for every
+  //book
   return books.map((book) => (
     <BookEntry
-      key={book.title}
+      key={book.id}
       date={book.date}
       title={book.title}
       author={book.author}

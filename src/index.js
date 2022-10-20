@@ -8,13 +8,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="addbook" element={<AddBook />} />
-        <Route path="editbook" element={<EditBook />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="addbook" element={<AddBook />} />
+      <Route path="editbook" element={<EditBook />} />
+    </Routes>
+  </BrowserRouter>
+  // </React.StrictMode>
 );
