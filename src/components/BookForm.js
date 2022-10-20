@@ -39,7 +39,7 @@ const BookForm = (props) => {
 
     //Collect all the information into an object
     const bookData = {
-      id: Math.floor(Math.random() * (100 - 1) + 1),
+      id: Math.floor(Math.random() * (100 - 10) + 10),
       date: new Date(Date.now()), //now
       title,
       author,
