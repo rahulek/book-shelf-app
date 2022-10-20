@@ -1,5 +1,6 @@
 const booksData = [
   {
+    id: 1,
     date: new Date("January 1, 2019"),
     title: "The Colleced Works of William Shakespeare",
     author: "Oxford University Press",
@@ -7,6 +8,7 @@ const booksData = [
     price: 872,
   },
   {
+    id: 2,
     date: new Date("October 12, 2020"),
     title: "Saladin",
     author: "John Man",
@@ -14,6 +16,7 @@ const booksData = [
     price: 342,
   },
   {
+    id: 3,
     date: new Date("December 27, 2016"),
     title: "Republic",
     author: "Plato and Oxford University Press",
@@ -21,6 +24,7 @@ const booksData = [
     price: 699,
   },
   {
+    id: 4,
     date: new Date("January 10, 2022"),
     title: "Tao Te Ching",
     author: "Lao Tzu",
