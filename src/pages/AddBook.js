@@ -14,6 +14,7 @@ const AddBook = (props) => {
   //We take the book data and pass it back to the / route (App Component)
   //This book data is passed as a "state" object inside the navigate() call
   const addBookHandler = (bookData) => {
+    console.log(`AddBook.js -> ${JSON.stringify(bookData)}`);
     navigate("/", { state: bookData });
   };
 

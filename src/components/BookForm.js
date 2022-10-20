@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import uuid from "react-uuid";
 import "./BookForm.css";
 
 const BookForm = (props) => {
@@ -39,11 +40,11 @@ const BookForm = (props) => {
 
     //Collect all the information into an object
     const bookData = {
-      id: Math.floor(Math.random() * (100000 - 10) + 10),
+      id: uuid(),
       date: new Date(Date.now()), //now
       title,
       author,
-      tags,
+      tags: tags.split(","),
       price,
     };
 

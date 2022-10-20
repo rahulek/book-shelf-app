@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
 import "./App.css";
 import "./components/Books";
 import Books from "./components/Books";
@@ -29,24 +28,29 @@ function App() {
   //When the bookData state changes, the App component is rendered again
   //and displays the new book.
   useEffect(() => {
-    if (Object.keys(newBookData).length !== 0) {
-      setBooksState((prevState) => {
-        newBookData.tags = newBookData.tags && newBookData.tags.split(",");
-        booksData.push(newBookData);
-        return booksData;
-      });
+    if (newBookData && Object.keys(newBookData).length !== 0) {
+      setBooksState((prevState) => [...prevState, newBookData]);
     }
 
     //We've consumed the "state" object (new book info), we can clear it
     //by navigating to self.
-    navigate(".", { state: {} });
-  }, [navigate, newBookData, booksState]);
+    navigate(".", { replace: true });
+  }, [newBookData, navigate]);
 
   //Event handler function for the "Add New Book" button click
   const addNewBookHandler = () => {
     //Simply navigate to the "addBook" route. This will show us
     //the AddBook page
     navigate("addBook");
+  };
+
+  //Event handler function called by the child component <Books />
+  //Its called when user wants to delete a book. Book's id is passed-in.
+  const deleteBookHandler = (bookId) => {
+    //Filter out the book with the given ID
+    //Because the book is filtered out, new state will be an array
+    //that has no book with this ID (deleted)
+    setBooksState(booksState.filter((book) => book.id !== bookId));
   };
 
   //Return the JSX
@@ -56,7 +60,7 @@ function App() {
       <button onClick={addNewBookHandler}>
         Click Here to add a New Book to your Shelf
       </button>
-      <Books books={booksState} />
+      <Books books={booksState} onDeleteBook={deleteBookHandler} />
     </div>
   );
 }

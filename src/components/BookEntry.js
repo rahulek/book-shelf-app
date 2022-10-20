@@ -11,6 +11,24 @@ function BookEntry(props) {
   const author = props.author;
   const tags = props.tags;
 
+  //Id of the book that we can pass back to the parent
+  //<Book /> component to indicate which book-id to
+  //be deleted.
+  const bookId = props.id;
+
+  //Get the onDeleteBook property on the parent element
+  //This is a function that can be invoked and passed an
+  //id of the book to be deleted
+  const onBookDelete = props.onBookDelete;
+
+  //Delete Button event handler
+  // props.key as book's id
+  // call props.onDeleteBook() and pass-in the book's id.
+  const deleteClickHandler = (e) => {
+    console.log(`Book ${bookId} being deleted`);
+    onBookDelete(bookId);
+  };
+
   //Return the JSX that uses the data that's passed-in
   return (
     <div className="book-entry">
@@ -30,7 +48,7 @@ function BookEntry(props) {
       <div className="book-entry__price">₹{price}</div>
       <div className="book-entry__edit">
         <button>Edit Details</button>
-        <button>Delete</button>
+        <button onClick={deleteClickHandler}>Delete</button>
       </div>
     </div>
   );
