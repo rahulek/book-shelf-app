@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import uuid from "react-uuid";
 
 import "./App.css";
 import "./components/Books";
 import Books from "./components/Books";
+import BookForm from "./components/BookForm";
 
 function App() {
   const books = [
@@ -33,10 +34,24 @@ function App() {
     },
   ];
 
+  //Create a state for the books
+  let [booksData, setBooksData] = useState(books);
+
+  //Delete book callback function
+  //The <Books /> component invokes it with a bookId
+  //to get that book deleted
+  const deleteBookHandler = (bookId) => {
+    console.log(`Deleting a book with id: ${bookId}`);
+    setBooksData((prevBooks) => {
+      return prevBooks.filter((book) => book.id !== bookId);
+    });
+  };
+
   return (
     <div className="App">
       <h1>Welcome to the World of Books</h1>
-      <Books books={books} />
+      <BookForm />
+      <Books books={booksData} onDeleteBook={deleteBookHandler} />
     </div>
   );
 }

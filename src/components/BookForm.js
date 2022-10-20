@@ -33,6 +33,9 @@ const BookForm = (props) => {
     e.preventDefault();
 
     //Collect all the information into an object
+    //Parse the string input into a numeric one
+    //It can fail if the entered price was not numeric
+    //If NaN (Not-a-Number) was returned, set the price to 0
     let parsedPrice = parseInt(price);
     if (isNaN(parsedPrice)) {
       parsedPrice = 0;

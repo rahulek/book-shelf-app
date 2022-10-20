@@ -5,13 +5,21 @@ import BookDate from "./BookDate";
 
 function BookEntry(props) {
   //Normal piece-meal state for title and price fields
+  const bookId = props.id;
   const title = props.title;
   const price = props.price;
   const author = props.author;
   const tags = props.tags;
+  //Delete book callback function
+  const onDeleteBook = props.onDeleteBook;
 
   const bookDeleteHandler = () => {
-    console.log(`Deleting ${title}`);
+    //Invoke the parent's callback function
+    //to indicate it that a book with id bookId
+    //is getting deleted
+    if (onDeleteBook) {
+      onDeleteBook(bookId);
+    }
   };
 
   //Return the JSX that uses the data that's passed-in
