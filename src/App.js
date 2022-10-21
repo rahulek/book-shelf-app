@@ -37,6 +37,13 @@ function App() {
   //Create a state for the books
   let [booksData, setBooksData] = useState(books);
 
+  //Add book callback function
+  //The <BookForm /> component invokes it with the information
+  //about the new book.
+  const addBookHandler = (newBook) => {
+    setBooksData((prevBooks) => [...prevBooks, newBook]);
+  };
+
   //Delete book callback function
   //The <Books /> component invokes it with a bookId
   //to get that book deleted
@@ -50,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to the World of Books</h1>
-      <BookForm />
+      <BookForm onAddBook={addBookHandler} />
       <Books books={booksData} onDeleteBook={deleteBookHandler} />
     </div>
   );

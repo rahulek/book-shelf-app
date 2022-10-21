@@ -32,7 +32,7 @@ function BookEntry(props) {
           <em>by {author}</em>
         </div>
       </div>
-      {tags.length === 2 && (
+      {tags.length >= 2 && (
         <div className="book-entry__tags">
           <p>{tags[0]}</p>
           <p>{tags[1]}</p>

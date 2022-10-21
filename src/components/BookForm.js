@@ -7,6 +7,8 @@ const BookForm = (props) => {
   let [author, setAuthor] = useState("");
   let [tags, setTags] = useState("");
   let [price, setPrice] = useState("");
+  //callback function sent in the props
+  const onAddBook = props.onAddBook;
 
   //Input Change Handlers
   const titleChangeHandler = (e) => {
@@ -49,7 +51,9 @@ const BookForm = (props) => {
       tags: tags.split(","),
       price: parsedPrice,
     };
-    console.log(`BookData: ${JSON.stringify(bookData)}`);
+    //State lift-up, invoke the parent component and send it the
+    //new book information
+    onAddBook(bookData);
 
     //Clear the input fields
     setTitle("");
